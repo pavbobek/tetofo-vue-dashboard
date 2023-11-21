@@ -1,7 +1,7 @@
 import { createWebHistory, createRouter } from 'vue-router'
-import Dashboard from './component/dashboard.vue'
-import Login from './component/login.vue'
-import Register from './component/register.vue'
+import DashboardComponent from './component/DashboardComponent.vue'
+import LoginCompoment from './component/DashboardComponent.vue'
+import RegisterComponent from './component/DashboardComponent.vue'
 
 export default createRouter({
     history: createWebHistory(process.env.BASE_URL),
@@ -9,19 +9,19 @@ export default createRouter({
         {
             path: '/',
             name: 'Login',
-            component: Login
+            component: LoginCompoment
         },
         {
             path: '/dashboard',
-            component: Dashboard
+            component: DashboardComponent
         },
         {
             path: '/login',
-            component: Login
+            component: LoginCompoment
         },
         {
             path: '/register',
-            component: Register
+            component: RegisterComponent
         }
     ]
 })

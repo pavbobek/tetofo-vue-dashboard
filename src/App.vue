@@ -1,9 +1,8 @@
 <template>
+  <NavComponent />
   <router-view />
 </template>
 
-<script>
-  export default {
-
-  }
+<script setup>
+  import NavComponent from './component/NavComponent.vue'
 </script>
