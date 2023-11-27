@@ -1,8 +1,8 @@
 <template>
-  <NavComponent />
+  <UserNavComponent />
   <router-view />
 </template>
 
 <script setup>
-  import NavComponent from './component/NavComponent.vue'
+  import UserNavComponent from './component/UserNavComponent.vue'
 </script>
