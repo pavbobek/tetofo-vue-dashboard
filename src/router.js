@@ -1,15 +1,16 @@
 import { createWebHistory, createRouter } from 'vue-router'
 import DashboardComponent from './component/DashboardComponent.vue'
-import LoginCompoment from './component/DashboardComponent.vue'
-import RegisterComponent from './component/DashboardComponent.vue'
+import LoginCompoment from './component/LoginComponent.vue'
+import RegisterComponent from './component/RegisterComponent.vue'
+import WelcomeComponent from './component/WelcomeComponent.vue'
 
 export default createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes: [
         {
             path: '/',
-            name: 'Login',
-            component: LoginCompoment
+            name: 'Welcome',
+            component: WelcomeComponent
         },
         {
             path: '/dashboard',
@@ -22,6 +23,10 @@ export default createRouter({
         {
             path: '/register',
             component: RegisterComponent
+        },
+        {
+            path: '/welcome',
+            component: WelcomeComponent
         }
     ]
 })
