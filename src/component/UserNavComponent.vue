@@ -3,7 +3,7 @@
         <li>
             <router-link to="/dashboard">Home</router-link>
         </li>
-        <div v-if="!user">
+        <div v-if="!isUserLogged()">
             <li>
                 <RouterLink to="/login">Login</RouterLink>
             </li> 
@@ -11,7 +11,7 @@
                 <RouterLink to="/register">Register</RouterLink>
             </li> 
         </div>
-        <div v-if="user">
+        <div v-if="isUserLogged()">
             <li>
                 <a href @click.prevent="logout">Logout</a>
             </li> 
@@ -20,7 +20,13 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue'
-    const user = ref(false)
-    function logout() {}
+    import authService from '../service/AuthService.js'
+    import router from '../router.js'
+    function logout() {
+        authService.logout();
+        router.push('/login');
+    }
+    function isUserLogged() {
+        return authService.isUserLogged()
+    }
 </script>

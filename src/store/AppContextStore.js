@@ -1,13 +1,17 @@
-import { pinia } from 'pinia'
+import { defineStore } from 'pinia'
 
-export const appContextStore = pinia('AppContextStore',{
-    state: () => ({ jwt: null }),
+export const appContextStore = defineStore('AppContextStore',{
+    state: () => ({ jwt: null, user: null }),
     getters: {
-        getJWT: (state) => state.jwt
+        getJWT: (state) => state.jwt,
+        getUser: (state) => state.user
     },
     actions: {
         setJWT(jwt) {
             this.jwt = jwt
+        },
+        setUser(user) {
+            this.user = user
         }
     }
 })

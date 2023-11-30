@@ -1,6 +1,6 @@
 import { axios } from 'axios'
-import { appContextStore } from '../store/AppContextStore.js'
-import { serverContextStore } from '../store/ServerContextStore.js'
+import appContextStore from '../store/AppContextStore.js'
+import serverContextStore from '../store/ServerContextStore.js'
 
 class ServerService {
     get(endpoint) {
